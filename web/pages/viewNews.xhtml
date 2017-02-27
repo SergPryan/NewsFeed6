@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:o="http://omnifaces.org/ui"
+      xmlns:of="http://omnifaces.org/functions"
+>
+<h:head>
+    <title>View News</title>
+</h:head>
+<h:body>
+<h:form>
+<h:panelGrid columns="2">
+    <!--News list selection -->
+    Show by <h:selectOneRadio id="selectCountNews"  value="#{newsBean.currentAmount}" valueChangeListener="#{newsBean.changeCountViewNews}" onchange="submit()">
+    <f:selectItems value="#{newsBean.amountNews}" var="count" itemValue="#{count}" itemLabel="#{count}"/>
+    <f:ajax execute="selectCountNews" render="newsTable"/>
+</h:selectOneRadio>
+
+</h:panelGrid>
+</h:form>
+<h:dataTable id="newsTable" value="#{newsBean.list}" var="tmp" border="1">
+
+    <!--news template -->
+<h:column>
+    #{tmp.date} #{tmp.header}
+    <p> #{tmp.body}</p>
+    <!--image -->
+     <o:graphicImage value="#{tmp.image}"/>
+</h:column>
+</h:dataTable>
+</h:body>
+</html>

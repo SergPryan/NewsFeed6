@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="NewsFeed6:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/NewsFeed6_war_exploded.war</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="NewsFeed6/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="NewsFeed6" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="mysql:mysql-connector-java:5.1.40" />
+          <element id="library" level="project" name="org.omnifaces:omnifaces:2.6.1" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Add News</title>
+</h:head>
+
+<h:body>
+    <!--form add items -->
+    <h:form enctype="multipart/form-data">
+        <h:panelGrid columns="2" border="1">
+            Header: <h:inputText value="#{newsBean.news.header}" required="true">
+            <f:validateLength maximum="100"/>
+        </h:inputText>
+            Body: <h:inputTextarea cols="30" rows="10" value="#{newsBean.news.body}" required="true">
+        </h:inputTextarea>
+            Image file: <h:inputFile value="#{newsBean.partImage}" />
+        </h:panelGrid>
+        <h:commandButton value="add" action="#{newsBean.createNews()}"/>
+    </h:form>
+    <br/>
+</h:body>
+
+</html>
